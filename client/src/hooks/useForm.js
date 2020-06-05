@@ -4,10 +4,12 @@
 // -- handleChanges
 // -- clearForm
 
-import { useLocalStorage } from './useLocalStorage';
+// import { useLocalStorage } from './useLocalStorage';
+import { useState } from 'react';
 
-export const useForm = (key, initialValue) => {
-  const [values, setValues] = useLocalStorage(key, initialValue);
+export const useForm = (initialValue) => {
+  // const [values, setValues] = useLocalStorage(key, initialValue);
+  const [values, setValues] = useState(initialValue);
 
   const handleChanges = (e) => {
     setValues({
